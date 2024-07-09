@@ -1,0 +1,15 @@
+.searchInput {
+  width: 100%;
+  font-weight: 400;
+
+  outline: none;
+  &:focus {
+    border-color: #646cff;
+  }
+}
+
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
