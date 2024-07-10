@@ -1,7 +1,9 @@
+import s from './RepoItem.module.scss'
+
 export const RepoItem = ({el}) => {
 
   return (
-    <div className={'repoItem'}>
+    <div className={s.repoItem}>
       <span>
         Название: {el.name}
       </span>
@@ -12,7 +14,7 @@ export const RepoItem = ({el}) => {
         Последний коммит: {el.pushedAt.slice(0, 10)}
       </span>
       <span>
-        Ссылка <a href={el.url}>{el.url}</a>
+        Ссылка: <a href={el.url}>{el.url}</a>
       </span>
     </div>
   );
