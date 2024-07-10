@@ -13,7 +13,6 @@ export const RepoList = () => {
   }, []);
 
   useEffect(() => {
-    console.log(isFetching)
     if (repoSearch && repos.length !== 0) {
       setCurrentRepos(repos)
     } else {
