@@ -1,6 +1,6 @@
 import RepoItem from "../../../feauters/RepoItem"
 import {$repos} from "../../../pages/MainPage/model/model.ts"
-import {useUnit} from "effector-react";
+import {useUnit} from "effector-react"
 
 export const RepoList = () => {
   const [repos] = useUnit([$repos])

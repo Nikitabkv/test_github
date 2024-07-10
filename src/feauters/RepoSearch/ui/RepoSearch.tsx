@@ -7,7 +7,10 @@ export const RepoSearch = () => {
 
   return (
     <div className={s.inputWrapper}>
-      <input className={s.searchInput} type="text" value={value} onChange={(e) => setValue(e.target.value)} />
+      <input className={s.searchInput} type="text" value={value}
+             onChange={(e) => setValue(e.target.value)}
+             onKeyDown={(e) => e.key === 'Enter' && submitValue()}
+      />
       <button onClick={submitValue}>
         Искать
       </button>

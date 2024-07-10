@@ -1,9 +1,9 @@
-import {createEffect} from "effector";
+import {createEffect} from "effector"
 
 async function fetchRepositories(text) {
   const url = 'https://api.github.com/graphql';
   const headers = {
-    'Authorization': `yourtoken`,
+    'Authorization': ``,
     'Content-Type': 'application/json',
   };
 
@@ -22,26 +22,26 @@ async function fetchRepositories(text) {
           }
       }
   }
-  `;
+  `
 
-  const body = JSON.stringify({ query, variables: { text } });
+  const body = JSON.stringify({ query, variables: { text } })
 
   try {
     const response = await fetch(url, {
       method: 'POST',
       headers,
       body,
-    });
+    })
 
-    const json = await response.json();
+    const json = await response.json()
 
     if (response.ok) {
-      return json.data.search.nodes;
+      return json.data.search.nodes
     } else {
-      console.error('Error:', json.errors);
+      console.error('Error:', json.errors)
     }
   } catch (error) {
-    console.error('Fetch error:', error);
+    console.error('Fetch error:', error)
   }
 }
 
