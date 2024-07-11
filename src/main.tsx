@@ -2,7 +2,6 @@ import './App.css'
 import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import RepositoryPage from "./pages/RepositoryPage"
 import MainPage from "./pages/MainPage/MainPage.tsx"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import RepositoryPage from "./pages/RepositoryPage"
