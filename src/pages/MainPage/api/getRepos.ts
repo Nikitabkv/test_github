@@ -21,6 +21,7 @@ async function fetchRepositories(text) {
                  stargazerCount
                  forkCount
                  pushedAt
+                  nameWithOwner
               }
           }
       }
@@ -61,6 +62,7 @@ async function fetchUserRepos() {
             stargazerCount
             forkCount
             pushedAt
+            nameWithOwner
           }
         }
       }

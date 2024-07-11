@@ -1,21 +1,24 @@
 import s from './RepoItem.module.scss'
+import {Link} from "react-router-dom";
 
 export const RepoItem = ({el}) => {
 
   return (
-    <div className={s.repoItem}>
+    <Link to={`repository/${el.nameWithOwner}`}>
+      <div className={s.repoItem}>
       <span>
         Название: {el.name}
       </span>
-      <span>
+        <span>
         Звезд: {el.stargazerCount}⭐
       </span>
-      <span>
+        <span>
         Последний коммит: {el.pushedAt.slice(0, 10)}
       </span>
-      <span>
-        Ссылка: <a href={el.url}>{el.url}</a>
+        <span>
+        Ссылка: {el.url}
       </span>
-    </div>
-  );
+      </div>
+    </Link>
+  )
 }

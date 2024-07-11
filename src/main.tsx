@@ -1,10 +1,25 @@
+import './App.css'
+import './index.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+// import RepositoryPage from "./pages/RepositoryPage"
+import MainPage from "./pages/MainPage/MainPage.tsx"
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import RepositoryPage from "./pages/RepositoryPage"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainPage />,
+  },
+  {
+    path: "repository/:owner/:name",
+    element: <RepositoryPage />,
+  }
+]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

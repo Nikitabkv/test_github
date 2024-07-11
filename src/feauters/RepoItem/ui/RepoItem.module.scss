@@ -6,4 +6,10 @@
   border-radius: 12px;
   width: 100%;
   max-width: 650px;
+  transition: 0.25s;
+
+  &:hover {
+    border-color: #646cff;
+    background-color: rgba(83, 91, 242, 0.02);
+  }
 }
