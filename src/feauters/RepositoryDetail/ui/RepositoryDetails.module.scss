@@ -1,0 +1,51 @@
+.repositoryDetails {
+  border-radius: 8px;
+  padding: 10px;
+  flex-grow: 1;
+  border: 1px solid #f0f1ff;
+  @media (prefers-color-scheme: light) {
+    border-color: #d3d5ff;
+  }
+
+  .langs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 600;
+
+    span {
+      padding: 0 5px;
+      display: inline-block;
+    }
+
+    .langColorsCircle {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    .langColors {
+      display: flex;
+      flex-wrap: nowrap;
+
+      span {
+        height: 12px;
+
+        &:first-child {
+          border-radius: 8px 0 0 8px;
+        }
+        &:last-child {
+          border-radius: 0 8px 8px 0;
+        }
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

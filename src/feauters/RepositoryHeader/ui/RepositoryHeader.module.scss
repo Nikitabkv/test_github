@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  h1 {
+    color: #535bf2;
+  }
+
+  .nameWrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-transform: capitalize;
+    border-radius: 8px;
+    padding: 0 20px;
+    border: 1px solid #f0f1ff;
+    text-shadow: #ffffff2e 2px 3px 11px;
+    @media (prefers-color-scheme: light) {
+      text-shadow: rgb(38 49 255 / 39%) 2px 3px 11px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      border-color: #d3d5ff;
+    }
+  }
+}
+
+.headerInfo {
+  height: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #f0f1ff;
+}
