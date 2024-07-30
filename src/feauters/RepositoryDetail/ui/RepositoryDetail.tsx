@@ -1,9 +1,28 @@
 import s from "./RepositoryDetails.module.scss"
+import {FC} from "react";
+
+interface IProps {
+  repository: {
+    description: string
+    languages: {
+      edges: {
+        node: {
+          id: string
+          name: string
+          color: string
+        }
+        size: number
+      }[]
+      totalSize: number
+    }
+  }
+}
 
 const getColorPercent = (allWeight: number, weight: number) => {
   return (weight / allWeight) * 100
 }
-export const RepositoryDetails = ({repository}) => {
+
+export const RepositoryDetails:FC<IProps> = ({repository}) => {
   const totalSize = repository.languages.totalSize
   const colors = repository.languages.edges
 

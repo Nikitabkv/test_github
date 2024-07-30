@@ -1,6 +1,16 @@
 import s from "./RepositoryUserInfo.module.scss"
+import {FC} from "react";
 
-export const RepositoryUserInfo = ({repository}) => {
+type RepositoryUserInfoProps = {
+  repository: {
+    owner: {
+      login: string
+      avatarUrl: string
+    }
+  }
+}
+
+export const RepositoryUserInfo:FC<RepositoryUserInfoProps> = ({repository}) => {
 
   return (
     <div className={s.ownerInfo}>

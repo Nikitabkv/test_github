@@ -1,14 +1,20 @@
 import {useUnit} from "effector-react"
 import {$page, pageChanged} from "../../../pages/MainPage/model/model.ts"
+import {FC} from "react";
 
-export const RepoPaginator = ({repos}) => {
+type RepoPaginatorProps = {
+  repos: Array<never>
+}
+
+export const RepoPaginator:FC<RepoPaginatorProps> = ({repos}) => {
   const [page, changePage] = useUnit([$page, pageChanged])
 
   return (
     <>
       <h2>Страницы</h2>
       <div>
-        {repos.map((repo, index) => {
+        {/*тут хотел зачем-то использовать репу, потому мап*/}
+        {repos.map((_, index: number) => {
           if (index % 10 === 0) {
             return (
               <span

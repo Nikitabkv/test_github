@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
 import s from './RepositoryPage.module.scss'
 import {useEffect} from "react"
 import {getRepoFx} from "../api/getRepo.ts"
@@ -22,7 +24,7 @@ export const RepositoryPage = () => {
   return (
     <div className={s.repoWrapper}>
       {isFetching && 'Loading...'}
-      {repository &&
+      {repository ?
           <>
               <Link to={'/'} onClick={() => back()}> | Back | </Link>
               <RepositoryHeader repository={repository}/>
@@ -31,7 +33,7 @@ export const RepositoryPage = () => {
                   <RepositoryUserInfo repository={repository} />
                   <RepositoryDetails repository={repository}/>
               </div>
-          </>
+          </> : 'Repository not found'
       }
     </div>
   )

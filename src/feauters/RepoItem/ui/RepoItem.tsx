@@ -1,7 +1,24 @@
 import s from './RepoItem.module.scss'
 import {Link} from "react-router-dom";
+import {FC} from "react";
 
-export const RepoItem = ({el}) => {
+type TRepoItem = {
+  key: number
+  el: {
+    name: string
+    owner: {
+      login: string
+    }
+    html_url: string
+    description: string
+    nameWithOwner: string
+    stargazerCount: number
+    pushedAt: string
+    url: string
+  }
+}
+
+export const RepoItem:FC<TRepoItem> = ({el}) => {
 
   return (
     <Link to={`repository/${el.nameWithOwner}`}>

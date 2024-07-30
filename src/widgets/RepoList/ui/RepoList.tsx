@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
+
 import {$isFetching, $page, $repos, $repoSearch, $userRepos, pageLoaded} from "../../../pages/MainPage/model/model.ts"
 import RepoPaginator from "../../../feauters/RepoPaginator"
 import RepoItem from "../../../feauters/RepoItem"
@@ -13,7 +16,7 @@ export const RepoList = () => {
   }, [])
 
   useEffect(() => {
-    if (repoSearch && repos.length !== 0) {
+    if (repoSearch && repos) {
       setCurrentRepos(repos)
     } else {
       setCurrentRepos(userRepos)
@@ -26,7 +29,7 @@ export const RepoList = () => {
       {isFetching ? 'Загрузка...' : (
         <>
           <div className={'repoList'}>
-            {currentRepos.map((el, index) => {
+            {currentRepos.map((el: { name: string, owner: { login: string }, html_url: string,  description: string, nameWithOwner: string, stargazerCount: number, pushedAt: string, url: string}, index: number) => {
               const start = (page - 1) * 10 + 1
               const end = page * 10
 

@@ -1,6 +1,15 @@
 import s from "./RepositoryHeader.module.scss"
+import {FC} from "react";
 
-export const RepositoryHeader = ({repository}) => {
+type TProps = {
+  repository: {
+    name: string
+    pushedAt: string
+    stargazerCount: number
+  }
+}
+
+export const RepositoryHeader:FC<TProps> = ({repository}) => {
 
   return (
     <div className={s.header}>

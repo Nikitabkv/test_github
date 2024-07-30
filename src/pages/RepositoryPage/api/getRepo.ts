@@ -2,13 +2,16 @@ import {createEffect} from "effector"
 
 const TOKEN = ''
 
+// тут смотреть не на что
+
 const url = 'https://api.github.com/graphql';
 const headers = {
-  'Authorization': `${TOKEN}`,
+  'Authorization': `token ${TOKEN}`,
   'Content-Type': 'application/json',
 }
 
-async function fetchRepository(params) {
+async function fetchRepository(params: unknown) {
+  console.log(params)
 
   const query = `
     query Repository($owner: String!, $name: String!) {

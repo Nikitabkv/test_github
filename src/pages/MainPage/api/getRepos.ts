@@ -2,13 +2,15 @@ import {createEffect} from "effector"
 
 const TOKEN = ''
 
+// тут смотреть не на что
+
 const url = 'https://api.github.com/graphql';
 const headers = {
-  'Authorization': `${TOKEN}`,
+  'Authorization': `token ${TOKEN}`,
   'Content-Type': 'application/json',
 };
 
-async function fetchRepositories(text) {
+async function fetchRepositories(text: unknown) {
 
   const query = `
     query Search($text: String!) {
